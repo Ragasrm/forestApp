@@ -21,7 +21,8 @@ class DisplayDetails extends StatelessWidget {
         boxFit: BoxFit.fill,
         
         images: [
-            Image(image: NetworkImage(data['i']))
+            // Image(image: NetworkImage(data['i']))    this is fornetwork image
+            Image.asset(data['i'])
         ],      
        ),
     );
@@ -46,79 +47,87 @@ class DisplayDetails extends StatelessWidget {
             child: image_slider_carousel,
           ),
            Divider( height: 20.0,),
-           Text('Information', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),), Divider( height: 10.0,),
+          //  Text('Information', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),), Divider( height: 10.0,),
            Container(
-             height: 350.0,
+             height: 400.0,
              child: SingleChildScrollView(
                child: Card(
                  child: Column(
                    children: [
+                     makecardItem("Common Name",data['c']),
+                     makecardItem("Scientific Name",data['s']),
+                     makecardItem("Family Name",data['f']),
+                     makecardItem("Size", data['sz']),
+                     makecardItem("Description",data['d']),
 
-                     //Common name
-                     Row(mainAxisAlignment: MainAxisAlignment.start,
-                       children: [
-                         Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
-                         child: Text('Common Name', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),) ],),
-                        Wrap( runAlignment: WrapAlignment.start,
-                         children: [
-                           Padding( padding: const EdgeInsets.only(left: 8.0),
-                           child: Wrap( runAlignment: WrapAlignment.start,
-                           children: [
-                               Align( alignment: Alignment.topLeft,
-                               child: Text(data['c'], style: TextStyle( fontWeight: FontWeight.normal, fontSize: 14), ),), ],),) ],),
+                       //Common name
+                    //  Row(mainAxisAlignment: MainAxisAlignment.start,
+                    //    children: [
+                    //      Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
+                    //      child: Text('Common Name', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),) ],),
+                    //     Wrap( runAlignment: WrapAlignment.start,
+                    //      children: [
+                    //        Padding( padding: const EdgeInsets.only(left: 8.0),
+                    //        child: Wrap( runAlignment: WrapAlignment.start,
+                    //        children: [
+                    //            Align( alignment: Alignment.topLeft,
+                    //            child: Text(data['c'], style: TextStyle( fontWeight: FontWeight.normal, fontSize: 14), ),), ],),) ],),
 
-                       //Scientific name
-                     Row(mainAxisAlignment: MainAxisAlignment.start,
-                       children: [
-                         Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
-                         child: Text('Scientific Name', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),) ],),
-                        Wrap( runAlignment: WrapAlignment.start,
-                         children: [
-                           Padding( padding: const EdgeInsets.only(left: 8.0),
-                           child: Wrap( runAlignment: WrapAlignment.start,
-                           children: [
-                               Align( alignment: Alignment.topLeft,
-                               child: Text(data['s'], style: TextStyle( fontWeight: FontWeight.normal, fontSize: 14), ),), ],),) ],),
+                      //Scientific name
+                    //  Row(mainAxisAlignment: MainAxisAlignment.start,
+                    //    children: [
+                    //      Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
+                    //      child: Text('Scientific Name', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),) ],),
+                    //     Wrap( runAlignment: WrapAlignment.start,
+                    //      children: [
+                    //        Padding( padding: const EdgeInsets.only(left: 8.0),
+                    //        child: Wrap( runAlignment: WrapAlignment.start,
+                    //        children: [
+                    //            Align( alignment: Alignment.topLeft,
+                    //            child: Text(data['s'], style: TextStyle( fontWeight: FontWeight.normal, fontSize: 14), ),), ],),) ],),
 
-                        //Family name
-                      Row(mainAxisAlignment: MainAxisAlignment.start,
-                       children: [
-                         Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
-                         child: Text('Family Name', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),) ],),
-                        Wrap( runAlignment: WrapAlignment.start,
-                         children: [
-                           Padding( padding: const EdgeInsets.only(left: 8.0),
-                           child: Wrap( runAlignment: WrapAlignment.start,
-                           children: [
-                               Align( alignment: Alignment.topLeft,
-                               child: Text(data['f'], style: TextStyle( fontWeight: FontWeight.normal, fontSize: 14), ),), ],),) ],),
+                      //Family name
+                    //   Row(mainAxisAlignment: MainAxisAlignment.start,
+                    //    children: [
+                    //      Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
+                    //      child: Text('Family Name', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),) ],),
+                    //     Wrap( runAlignment: WrapAlignment.start,
+                    //      children: [
+                    //        Padding( padding: const EdgeInsets.only(left: 8.0),
+                    //        child: Wrap( runAlignment: WrapAlignment.start,
+                    //        children: [
+                    //            Align( alignment: Alignment.topLeft,
+                    //            child: Text(data['f'], style: TextStyle( fontWeight: FontWeight.normal, fontSize: 14), ),), ],),) ],),
 
-                          //SIZE 
-                      Row(mainAxisAlignment: MainAxisAlignment.start,
-                       children: [
-                         Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
-                         child: Text('Size', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),) ],),
-                        Wrap( runAlignment: WrapAlignment.start,
-                         children: [
-                           Padding( padding: const EdgeInsets.only(left: 8.0),
-                           child: Wrap( runAlignment: WrapAlignment.start,
-                           children: [
-                               Align( alignment: Alignment.topLeft,
-                               child: Text(data['sz'], style: TextStyle( fontWeight: FontWeight.normal, fontSize: 14), ),), ],),) ],),                         
+                         //SIZE 
+                    //   Row(mainAxisAlignment: MainAxisAlignment.start,
+                    //    children: [
+                    //      Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
+                    //      child: Text('Size', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),) ],),
+                    //     Wrap( runAlignment: WrapAlignment.start,
+                    //      children: [
+                    //        Padding( padding: const EdgeInsets.only(left: 8.0),
+                    //        child: Wrap( runAlignment: WrapAlignment.start,
+                    //        children: [
+                    //            Align( alignment: Alignment.topLeft,
+                    //            child: Text(data['sz'], style: TextStyle( fontWeight: FontWeight.normal, fontSize: 14), ),), ],),) ],),                         
                         
-                          //Description 
-                      Row(mainAxisAlignment: MainAxisAlignment.start,
-                       children: [
-                         Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
-                         child: Text('Description', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),) ],),
-                        Wrap( runAlignment: WrapAlignment.start,
-                         children: [
-                           Padding( padding: const EdgeInsets.only(left: 8.0),
-                           child: Wrap( runAlignment: WrapAlignment.start,
-                           children: [
-                               Align( alignment: Alignment.topLeft,
-                               child: Text(data['d'], style: TextStyle( fontWeight: FontWeight.normal, fontSize: 14), ),), ],),) ],),                         
-                               
+                      //Description 
+                    //   Row(mainAxisAlignment: MainAxisAlignment.start,
+                    //    children: [
+                    //      Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
+                    //      child: Text('Description', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),) ],),
+                    //     Wrap( runAlignment: WrapAlignment.start,
+                    //      children: [
+                    //        Padding( padding: const EdgeInsets.only(left: 8.0),
+                    //        child: Wrap( runAlignment: WrapAlignment.start,
+                    //        children: [
+                    //            Align( alignment: Alignment.topLeft,
+                    //            child: Text(data['d'], style: TextStyle( fontWeight: FontWeight.normal, fontSize: 14), ),), ],),) ],),                         
+
+
+
+
                      ], ), ),
                                
              ),
@@ -181,12 +190,26 @@ class DisplayDetails extends StatelessWidget {
       //   ],     
       // ),
       
-    );
-
-
-
-
-
-   
+    );   
   }
+
+
+
+    makecardItem(String title, String subtitle){
+
+           return Card(
+              elevation: 10,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              child: ListTile(
+                title: Text(title),
+                subtitle: Text(subtitle),
+              ),
+            );
+    
+  }
+
+
+
+
 }

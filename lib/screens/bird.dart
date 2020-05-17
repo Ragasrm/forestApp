@@ -1,6 +1,5 @@
 import 'package:ForestSpiApp/screens/displaydetails.dart';
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
@@ -11,8 +10,7 @@ class ListingFile extends StatefulWidget {
 
 class _ListingFileState extends State<ListingFile> {
 
-
-// constructor
+//constructor
   _ListingFileState() {
     this.fetchData();
     _filter.addListener(this.textChangeListener);
@@ -28,7 +26,7 @@ class _ListingFileState extends State<ListingFile> {
             filter.add(datum);
           }
         });
-        print(filter.length);
+      //  print(filter.length);
         if(filter.length > 0){
           setState(() {
             filteredData = filter;
@@ -45,6 +43,7 @@ class _ListingFileState extends State<ListingFile> {
       }
   }
 
+  
   // variable
   final TextEditingController _filter = new TextEditingController();  
   Icon _searchIcon = new Icon(Icons.search);
@@ -57,11 +56,10 @@ class _ListingFileState extends State<ListingFile> {
       //final rawData = await DefaultAssetBundle.of(context).loadString("assets/JSON/birds.json");
       final rawData = await rootBundle.loadString("assets/JSON/b.json");
       final List<dynamic> jsonData =  jsonDecode(rawData);
-      print(jsonData);
+      //print(jsonData);
       setState(() {
         data = jsonData;
         filteredData = jsonData;
-       
       });
   }
 
@@ -109,12 +107,18 @@ class _ListingFileState extends State<ListingFile> {
                 child: ListTile(
                   leading: ClipRRect(
                       borderRadius: BorderRadius.circular(25.0),
-                      child: CachedNetworkImage(
+                      // this is for network image
+                      // child: CachedNetworkImage(
+                      //   fit: BoxFit.cover,
+                      //   width: 55,
+                      //   height: 60,
+                      //   placeholder: (context, url) => new CircularProgressIndicator(),
+                      //   imageUrl:this.filteredData[i]['i'] 
+                      // ),
+                      child: Image.asset(this.filteredData[i]['i'] ,
                         fit: BoxFit.cover,
                         width: 55,
                         height: 60,
-                        placeholder: (context, url) => new CircularProgressIndicator(),
-                         imageUrl:this.filteredData[i]['i']                        
                       ),
                     ),
               title: Text(this.filteredData[i]['c']),
