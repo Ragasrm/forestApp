@@ -115,7 +115,7 @@ class _ListingFileState extends State<ListingFile> {
                       //   placeholder: (context, url) => new CircularProgressIndicator(),
                       //   imageUrl:this.filteredData[i]['i'] 
                       // ),
-                      child: Image.asset(this.filteredData[i]['i'] ,
+                      child: Image.asset(this.filteredData[i]['i'][0] ,
                         fit: BoxFit.cover,
                         width: 55,
                         height: 60,
