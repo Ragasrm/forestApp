@@ -10,25 +10,24 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   
-  Widget image_slider_carousel= Container(
+  Widget topCarousel () {
+    return Container(
        height: 200,
        child: Carousel(
           autoplay: true,
           animationCurve: Curves.fastOutSlowIn,
-        animationDuration: Duration(milliseconds: 2000),
-        dotSize: 1.0,
-        dotBgColor: Colors.transparent,
-        dotIncreasedColor: Colors.black,
-        boxFit: BoxFit.fill,
-        
-        images: [
-            AssetImage('assets/img/FCRI.JPG'),
-       
-            // AssetImage('assets/img/BackGround.png'),
-            // AssetImage('assets/img/logo1.png')         
-        ],      
+          animationDuration: Duration(milliseconds: 2000),
+          dotSize: 1.0,
+          dotBgColor: Colors.transparent,
+          dotIncreasedColor: Colors.black,
+          boxFit: BoxFit.fill,
+          
+          images: [
+              AssetImage('assets/img/FCRI.JPG'),  
+          ],      
        ),
     );
+  }
 
 
   @override
@@ -44,42 +43,26 @@ class _HomePageState extends State<HomePage> {
         body: Container(
           child: Column(
             children: [
-              Container(
-                height: 200.0,
-                child:  image_slider_carousel,
+              topCarousel(),
+              Divider( height: 10.0,),
+              Expanded(
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  padding: EdgeInsets.all(3.0),
+                  children: [
+                      makeDashboardItem("MAMMALS",'assets/img/tiger.jpg'),                   
+                      makeDashboardItem("BIRDS", 'assets/img/birds.jpg'),
+                      makeDashboardItem("HERPETOFAUNA",'assets/img/snake.jpg'),
+                      makeDashboardItem("LANDSCAPE ", 'assets/img/land.jpg'),
+                      makeDashboardItem("ABOUT FCRI", 'assets/img/FCRI.JPG'),
+                      makeDashboardItem("ABOUT US",'assets/img/ab.png'),
+                  ],
+                ),
               ),
-               Divider( height: 10.0,),
-              Container(
-                 height: 400.0,
-
-                // decoration: BoxDecoration(
-                // image: DecorationImage(
-                // image: AssetImage("assets/img/BackGround.png"),
-                //  fit: BoxFit.cover)),
-
-                 child: GridView.count(crossAxisCount: 2,
-                 padding: EdgeInsets.all(3.0),
-                 children: [
-              
-                    makeDashboardItem("MAMMALS",'assets/img/tiger.jpg'),                   
-                    makeDashboardItem("BIRDS", 'assets/img/birds.jpg'),
-                    makeDashboardItem("HERPETOFAUNA",'assets/img/snake.jpg'),
-                    makeDashboardItem("LANDSCAPE ", 'assets/img/land.jpg'),
-                    makeDashboardItem("ABOUT FCRI", 'assets/img/FCRI.JPG'),
-                    makeDashboardItem("ABOUT US",'assets/img/ab.png'),
-                 ],
-                 ),
-
-
-
-
-              )
-
             ],
           ),
         ),
       ),
-      
     );
   }
 
@@ -113,61 +96,66 @@ class _HomePageState extends State<HomePage> {
    makeDashboardItem(String title, String icon) {
     return Card(
       shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(80),
-              ),
-        elevation: 8.0,
-        margin: new EdgeInsets.all(8.0),
-        child: Container(
-          decoration: BoxDecoration(color: Colors.teal),
-          child: InkWell(
-            onTap: (){
-
-              // function 
-              if(title == 'BIRDS'){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                                ListingFile()));             
+        borderRadius: BorderRadius.circular(80),
+      ),
+      elevation: 8.0,
+      margin: new EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(color: Colors.teal),
+        child: InkWell(
+          onTap: (){
+            if(title == 'BIRDS'){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ListingFile()
+                )
+              );             
             }
-                  print('Ragav');
-            },
-            child: Container(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Stack(
-                  children: [
-                       Container(
-                                height: 30,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  color: Colors.black54,
-                                ),
-                                child: Align(
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                   title,
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ),
-                              ),
-                  ],
-                ),),
-
-                   decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(0),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black26,
-                              offset: Offset(2, 2),
-                              spreadRadius: 2,
-                              blurRadius: 2)
-                        ],
-                        image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage(icon)),
+            print('Ragav');
+          },
+          child: Container(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Stack(
+                children: [
+                  Container(
+                    height: 30,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.black54,
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        title,
+                        style: TextStyle(color: Colors.white),
                       ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  offset: Offset(2, 2),
+                  spreadRadius: 2,
+                  blurRadius: 2
+                )
+              ],
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage(icon)
+              ),
             ),
           ),
-    
-        ));
+        ),
+      )
+    );
   }
 
 
