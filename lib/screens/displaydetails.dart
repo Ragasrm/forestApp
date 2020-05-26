@@ -192,18 +192,19 @@ class DisplayDetails extends StatelessWidget {
 
 
     makecardItem(String title, String subtitle){
-
-           return Card(
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              child: ListTile(
-                title: Text(title),
-                subtitle: Text(subtitle),
-              ),
-            );
-    
-  }
+      return Container(
+        margin: EdgeInsets.fromLTRB(0, 2.5, 0, 2.5),
+            child: Card(
+            elevation: 3,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10)),
+            child: ListTile(
+              title: Text(title),
+              subtitle: Text(subtitle),
+            ),
+          ),
+      );
+    }
 
 
 
