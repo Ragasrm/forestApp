@@ -21,10 +21,7 @@ class DisplayDetails extends StatelessWidget {
           dotIncreasedColor: Colors.black,
           boxFit: BoxFit.fill,
           
-          images: [
-            // Image(image: NetworkImage(data['i']))    this is fornetwork image
-            Image.asset(data['i'])
-          ],      
+          images: data["i"].map((image) => Image.asset(image)).toList(),
        ),
     );
    }
