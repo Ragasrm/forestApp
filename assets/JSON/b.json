@@ -1,7 +1,7 @@
 [
 	{
       "c" : "Brahminy Kite",
-      "i" : "assets/img/Bird/brahminy_kite.jpg",
+      "i" : ["assets/img/Bird/brahminy_kite.jpg", "assets/img/Bird/indian_peafowl.jpg"],
       "s" : "Haliastur indus",
       "f" : "Accipitridae",
       "sz": "Kite-:48 cm",
@@ -9,7 +9,7 @@
     },
     {
       "c" : "Greater Coucal", 
-      "i" : "assets/img/Bird/greater_coucal.jpg",
+      "i" : ["assets/img/Bird/greater_coucal.jpg", "assets/img/Bird/indian_peafowl.jpg"],
       "s" : "Centropus sinensis",
       "f" : "Cuculidae",
       "sz" : "Crow+ : 48cm",
@@ -17,7 +17,7 @@
     },
     {
       "c" : "Indian Peafowl",
-      "i" :"assets/img/Bird/indian_peafowl.jpg",
+      "i" : ["assets/img/Bird/indian_peafowl.jpg", "assets/img/Bird/indian_peafowl.jpg"],
       "s" : "Pavo cristatus",
       "f" :"Phasianidae",
       "sz" : "Village hen+ : Male 92-122cm without train; Female 86 cm.",
@@ -25,7 +25,7 @@
     },
     {
       "c" : "Little Cormorant",
-      "i" : "assets/img/Bird/little_carmorant.jpg",
+      "i" : ["assets/img/Bird/little_carmorant.jpg", "assets/img/Bird/indian_peafowl.jpg"],
       "s" : "Phalacro corax niger",
       "f": "Phalacrocoracidae",
       "sz":"Crow+:51cm",
@@ -33,7 +33,7 @@
     },
      {
       "c" : "Spotted dove",
-      "i" : "assets/img/Bird/spotted_dove.jpg",
+      "i" : ["assets/img/Bird/spotted_dove.jpg", "assets/img/Bird/indian_peafowl.jpg"],
       "s" : "Streptopelia chinensis",
       "f" : "Columbidae",
       "sz" : "Pigeon - : 30cm",
@@ -41,7 +41,7 @@
     },
     {
       "c" : "White throated Kingfisher",
-      "i" : "assets/img/Bird/white_throated_kingfisher.jpg",
+      "i" : ["assets/img/Bird/white_throated_kingfisher.jpg", "assets/img/Bird/indian_peafowl.jpg"],
       "s" : "Halcyon smyrnensis",
       "f" : "Alcedinidae",
       "sz":"Myna+ : 28cm",
