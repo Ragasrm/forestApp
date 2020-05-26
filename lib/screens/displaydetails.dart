@@ -9,23 +9,25 @@ class DisplayDetails extends StatelessWidget {
     print(data['i']);
 
 // carousel widget made for image display...
-   Widget image_slider_carousel= Container(
+   Widget topCarousel () {
+     return Container(
        height: 200,
        child: Carousel(
           autoplay: true,
            //animationCurve: Curves.fastOutSlowIn,
-        animationDuration: Duration(milliseconds: 1000),
-        dotSize: 1.0,
-        dotBgColor: Colors.transparent,
-        dotIncreasedColor: Colors.black,
-        boxFit: BoxFit.fill,
-        
-        images: [
+          animationDuration: Duration(milliseconds: 1000),
+          dotSize: 1.0,
+          dotBgColor: Colors.transparent,
+          dotIncreasedColor: Colors.black,
+          boxFit: BoxFit.fill,
+          
+          images: [
             // Image(image: NetworkImage(data['i']))    this is fornetwork image
             Image.asset(data['i'])
-        ],      
+          ],      
        ),
     );
+   }
 
 //Actual Application starts here..!
     return Scaffold(
@@ -42,11 +44,8 @@ class DisplayDetails extends StatelessWidget {
       // image carousel
       body: Column(
         children: [
-          Container(
-           height: 200.0,
-            child: image_slider_carousel,
-          ),
-           Divider( height: 20.0,),
+          topCarousel(),
+          Divider( height: 20.0,),
           //  Text('Information', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),), Divider( height: 10.0,),
           Expanded(
             child: ListView(
