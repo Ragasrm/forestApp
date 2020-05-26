@@ -48,19 +48,16 @@ class DisplayDetails extends StatelessWidget {
           ),
            Divider( height: 20.0,),
           //  Text('Information', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),), Divider( height: 10.0,),
-           Container(
-             height: 400.0,
-             child: SingleChildScrollView(
-               child: Card(
-                 child: Column(
-                   children: [
-                     makecardItem("Common Name",data['c']),
-                     makecardItem("Scientific Name",data['s']),
-                     makecardItem("Family Name",data['f']),
-                     makecardItem("Size", data['sz']),
-                     makecardItem("Description",data['d']),
+          Expanded(
+            child: ListView(
+              children: [
+                makecardItem("Common Name",data['c']),
+                makecardItem("Scientific Name",data['s']),
+                makecardItem("Family Name",data['f']),
+                makecardItem("Size", data['sz']),
+                makecardItem("Description",data['d']),
 
-                       //Common name
+                        //Common name
                     //  Row(mainAxisAlignment: MainAxisAlignment.start,
                     //    children: [
                     //      Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
@@ -99,7 +96,7 @@ class DisplayDetails extends StatelessWidget {
                     //            Align( alignment: Alignment.topLeft,
                     //            child: Text(data['f'], style: TextStyle( fontWeight: FontWeight.normal, fontSize: 14), ),), ],),) ],),
 
-                         //SIZE 
+                          //SIZE 
                     //   Row(mainAxisAlignment: MainAxisAlignment.start,
                     //    children: [
                     //      Padding( padding: const EdgeInsets.only(left: 8.0, bottom: 8.0, top: 8.0),
@@ -128,10 +125,10 @@ class DisplayDetails extends StatelessWidget {
 
 
 
-                     ], ), ),
-                               
-             ),
-           )
+              ],
+                                
+              ),
+          )
         ],
       ),
 
