@@ -1,6 +1,8 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 
+import 'imageScreen.dart';
+
 class DisplayDetails extends StatelessWidget {
  DisplayDetails(this.data);
   final data;
@@ -21,7 +23,18 @@ class DisplayDetails extends StatelessWidget {
           dotIncreasedColor: Colors.black,
           boxFit: BoxFit.fill,
           
-          images: data["i"].map((image) => Image.asset(image)).toList(),
+          images: data["i"].map((image) => GestureDetector(
+            child: Image.asset(image),
+            onTap: () {
+              // print('Image Tap!');
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (
+                    BuildContext context) => ImageScreen(image)
+                )
+              );
+            }
+          )).toList(),
        ),
     );
    }
