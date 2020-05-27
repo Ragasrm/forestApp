@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ForestSpiApp/screens/Mammals/MammalDetails.dart';
 
 class MammalsList extends StatefulWidget {
   @override
@@ -53,7 +54,7 @@ class _MammalsListState extends State<MammalsList> {
 //function to get data;
  Future fetchData() async {
       //final rawData = await DefaultAssetBundle.of(context).loadString("assets/JSON/birds.json");
-      final rawData = await rootBundle.loadString("assets/JSON/mammals.json");
+      final rawData = await rootBundle.loadString("assets/JSON/m.json");
       final List<dynamic> jsonData =  jsonDecode(rawData);
      // print(jsonData);
       setState(() {
@@ -121,13 +122,13 @@ class _MammalsListState extends State<MammalsList> {
                       ),
                     ),
                     
-                title: Text(this.filteredData[i]['Common Name']),
-                subtitle: Text(this.filteredData[i]['Scientific Name'], style: TextStyle(fontStyle: FontStyle.italic, color: Colors.green),),
+                title: Text(this.filteredData[i]['Common_Name']),
+                subtitle: Text(this.filteredData[i]['Scientific_Name'], style: TextStyle(fontStyle: FontStyle.italic, color: Colors.green),),
               onTap: (){
 
-                //   Navigator.push(context, MaterialPageRoute(
-                // builder: (BuildContext context) => 
-                //     DisplayDetails(this.filteredData[i])));
+                  Navigator.push(context, MaterialPageRoute(
+                builder: (BuildContext context) => 
+                    MamDisplayDetails(this.filteredData[i])));
 
               },
             ),

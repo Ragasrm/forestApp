@@ -1,0 +1,22 @@
+ [
+        {
+            "Common_Name": "Royal Bengal Tiger",
+            "Scientific_Name": "Panthera tigris tigris",
+            "Family": "Felidae",
+            "Young_one": "Cub",
+            "Group": "Streak or Ambush",
+            "IUCN_Status": "EN",
+            "Wildlife_Protection_Act": "Schedule I (Part I)",
+            "Head_and_Body_Length": "270-310 cm (male)\r\n240-265 cm (female)",
+            "Height_at_Shoulder": "90-110 cm",
+            "Tail_Lenth": "85-110 cm",
+            "Weight": "170-260 Kg (male)\r\n100-160 Kg (female)",
+            "Description": "Tiger is the most magnificent and majestic animal in India. It has tawny-orange upperparts, white underparts, and white colour around the face with black stripes on the entire body. It has a slender, long tail with black rings.",
+            "Icon" : "assets/img/Mammals/Icons/tiger.jpg",
+            "i"   :  [   "assets/img/Mammals/img/Tiger.jpg",
+                         "assets/img/Mammals/img/Tiger_1.jpg",
+                         "assets/img/Mammals/img/Tiger_2.jpg",
+                         "assets/img/Mammals/img/Tiger_3.jpg"                         
+                        ]			
+        }
+       ]
