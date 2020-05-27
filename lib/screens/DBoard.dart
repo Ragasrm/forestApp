@@ -1,4 +1,5 @@
-import 'package:ForestSpiApp/screens/bird.dart';
+import 'package:ForestSpiApp/screens/bird/bird.dart';
+import 'package:ForestSpiApp/screens/Mammals/mammals.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 
@@ -104,13 +105,20 @@ class _HomePageState extends State<HomePage> {
         decoration: BoxDecoration(color: Colors.teal),
         child: InkWell(
           onTap: (){
+
             if(title == 'BIRDS'){
-              Navigator.push(
-                context,
+              Navigator.push(context,
                 MaterialPageRoute(
                   builder: (context) => ListingFile()
                 )
               );             
+            } else if(title == 'MAMMALS'){
+              Navigator.push(context,
+                MaterialPageRoute(
+                  builder: (context) => MammalsList()
+                )
+              ); 
+
             }
             print('Ragav');
           },

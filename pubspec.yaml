@@ -50,7 +50,9 @@ flutter:
   assets:
     - assets/img/ 
     - assets/img/DashboardImg/
-    - assets/img/Bird/     
+    - assets/img/Bird/ 
+    - assets/img/Mammals/  
+    - assets/img/Mammals/Icons/  
     - assets/JSON/
   #   - images/a_dot_ham.jpeg
 

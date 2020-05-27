@@ -1,17 +1,16 @@
-import 'package:ForestSpiApp/screens/displaydetails.dart';
-import 'package:flutter/material.dart';
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class ListingFile extends StatefulWidget {
+class MammalsList extends StatefulWidget {
   @override
-  _ListingFileState createState() => _ListingFileState();
+  _MammalsListState createState() => _MammalsListState();
 }
 
-class _ListingFileState extends State<ListingFile> {
+class _MammalsListState extends State<MammalsList> {
 
 //constructor
-  _ListingFileState() {
+  _MammalsListState() {
     this.fetchData();
     _filter.addListener(this.textChangeListener);
   }
@@ -22,7 +21,7 @@ class _ListingFileState extends State<ListingFile> {
       if(!text.isEmpty) {
         List<dynamic> filter = [];
         this.data.forEach((dynamic datum){
-          if(datum['c'].toString().toLowerCase().contains(text)){
+          if(datum['Common Name'].toString().toLowerCase().contains(text)){
             filter.add(datum);
           }
         });
@@ -47,16 +46,16 @@ class _ListingFileState extends State<ListingFile> {
   // variable
   final TextEditingController _filter = new TextEditingController();  
   Icon _searchIcon = new Icon(Icons.search);
-  Widget _appBarTitle = new Text( 'Bird List' );
+  Widget _appBarTitle = new Text( 'Mammals List' );
   List<dynamic> data = [];
   List<dynamic> filteredData = [];
 
 //function to get data;
  Future fetchData() async {
       //final rawData = await DefaultAssetBundle.of(context).loadString("assets/JSON/birds.json");
-      final rawData = await rootBundle.loadString("assets/JSON/bird.json");
+      final rawData = await rootBundle.loadString("assets/JSON/mammals.json");
       final List<dynamic> jsonData =  jsonDecode(rawData);
-      //print(jsonData);
+     // print(jsonData);
       setState(() {
         data = jsonData;
         filteredData = jsonData;
@@ -77,7 +76,7 @@ class _ListingFileState extends State<ListingFile> {
         );
       } else {
         this._searchIcon = new Icon(Icons.search);
-        this._appBarTitle = new Text('Bird List');
+        this._appBarTitle = new Text('Mammals List');
          _filter.clear();
       }
     });
@@ -102,7 +101,7 @@ class _ListingFileState extends State<ListingFile> {
 
       body: ListView.builder(
         itemCount: this.filteredData.length,
-        itemBuilder: (BuildContext context, i){
+        itemBuilder: (BuildContext context, i){        
           return Card(
                 child: ListTile(
                   leading: ClipRRect(
@@ -115,19 +114,20 @@ class _ListingFileState extends State<ListingFile> {
                       //   placeholder: (context, url) => new CircularProgressIndicator(),
                       //   imageUrl:this.filteredData[i]['i'] 
                       // ),
-                      child: Image.asset(this.filteredData[i]['i'][0] ,
+                      child: Image.asset(this.filteredData[i]['Icon'],
                         fit: BoxFit.cover,
                         width: 55,
                         height: 60,
                       ),
                     ),
-              title: Text(this.filteredData[i]['c']),
-              subtitle: Text(this.filteredData[i]['s'], style: TextStyle(fontStyle: FontStyle.italic, color: Colors.green),),
+                    
+                title: Text(this.filteredData[i]['Common Name']),
+                subtitle: Text(this.filteredData[i]['Scientific Name'], style: TextStyle(fontStyle: FontStyle.italic, color: Colors.green),),
               onTap: (){
 
-                  Navigator.push(context, MaterialPageRoute(
-                builder: (BuildContext context) => 
-                    DisplayDetails(this.filteredData[i])));
+                //   Navigator.push(context, MaterialPageRoute(
+                // builder: (BuildContext context) => 
+                //     DisplayDetails(this.filteredData[i])));
 
               },
             ),
@@ -140,4 +140,3 @@ class _ListingFileState extends State<ListingFile> {
     );
   }
 }
-
