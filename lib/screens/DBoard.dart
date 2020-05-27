@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           boxFit: BoxFit.fill,
           
           images: [
-              AssetImage('assets/img/FCRI.JPG'),  
+              AssetImage('assets/img/DashboardImg/FCRI.JPG'),  
           ],      
        ),
     );
@@ -50,12 +50,12 @@ class _HomePageState extends State<HomePage> {
                   crossAxisCount: 2,
                   padding: EdgeInsets.all(3.0),
                   children: [
-                      makeDashboardItem("MAMMALS",'assets/img/tiger.jpg'),                   
-                      makeDashboardItem("BIRDS", 'assets/img/birds.jpg'),
-                      makeDashboardItem("HERPETOFAUNA",'assets/img/snake.jpg'),
-                      makeDashboardItem("LANDSCAPE ", 'assets/img/land.jpg'),
-                      makeDashboardItem("ABOUT FCRI", 'assets/img/FCRI.JPG'),
-                      makeDashboardItem("ABOUT US",'assets/img/ab.png'),
+                      makeDashboardItem("MAMMALS",'assets/img/DashboardImg/tiger.jpg'),                   
+                      makeDashboardItem("BIRDS", 'assets/img/DashboardImg/birds.jpg'),
+                      makeDashboardItem("HERPETOFAUNA",'assets/img/DashboardImg/snake.jpg'),
+                      makeDashboardItem("LANDSCAPE ", 'assets/img/DashboardImg/land.jpg'),
+                      makeDashboardItem("ABOUT FCRI", 'assets/img/DashboardImg/FCRI.JPG'),
+                      makeDashboardItem("ABOUT US",'assets/img/DashboardImg/ab.png'),
                   ],
                 ),
               ),

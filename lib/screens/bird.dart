@@ -54,7 +54,7 @@ class _ListingFileState extends State<ListingFile> {
 //function to get data;
  Future fetchData() async {
       //final rawData = await DefaultAssetBundle.of(context).loadString("assets/JSON/birds.json");
-      final rawData = await rootBundle.loadString("assets/JSON/b.json");
+      final rawData = await rootBundle.loadString("assets/JSON/bird.json");
       final List<dynamic> jsonData =  jsonDecode(rawData);
       //print(jsonData);
       setState(() {
