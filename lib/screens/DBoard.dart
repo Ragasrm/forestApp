@@ -1,3 +1,4 @@
+import 'package:ForestSpiApp/screens/AboutFCRI/FCRI.dart';
 import 'package:ForestSpiApp/screens/bird/bird.dart';
 import 'package:ForestSpiApp/screens/Mammals/mammals.dart';
 import 'package:carousel_pro/carousel_pro.dart';
@@ -21,8 +22,7 @@ class _HomePageState extends State<HomePage> {
           dotSize: 1.0,
           dotBgColor: Colors.transparent,
           dotIncreasedColor: Colors.black,
-          boxFit: BoxFit.fill,
-          
+          boxFit: BoxFit.fill,          
           images: [
               AssetImage('assets/img/DashboardImg/FCRI.JPG'),  
           ],      
@@ -117,8 +117,13 @@ class _HomePageState extends State<HomePage> {
                 MaterialPageRoute(
                   builder: (context) => MammalsList()
                 )
-              ); 
-
+              );
+            } else if(title == 'ABOUT FCRI'){
+              Navigator.push(context,
+                MaterialPageRoute(
+                  builder: (context) => FCRIScreenDetails()
+                )
+              );
             }
             print('Ragav');
           },

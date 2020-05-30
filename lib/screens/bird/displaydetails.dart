@@ -7,9 +7,7 @@ class DisplayDetails extends StatelessWidget {
   final data;
   @override
   Widget build(BuildContext context) {
-    print("*************************************");
-    print(data['i']);
-    print("*************************************");
+ 
 
 // carousel widget made for image display...
    Widget topCarousel () {
